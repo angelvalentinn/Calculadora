@@ -25,7 +25,7 @@ botones.forEach(btn => {
         }
 
         if(valorBtn === "DEL") { //Operador que borra solo el ultimo número
-            if(screen.innerText.length == 1) {
+            if(screen.innerText.length == 1 || screen.innerText === "Error...") {
                 screen.innerText = "0"; //Si la longitud de los numeros que hay en la pantalla es de 1 y borramos pone un "0", asi no queda vacío    
                 return;
             } else {
@@ -34,7 +34,7 @@ botones.forEach(btn => {
             }
         }
 
-        screen.innerText === "0" ? screen.innerText = valorBtn : screen.innerText += valorBtn;
+        screen.innerText === "0" || screen.innerText === "Error..." ? screen.innerText = valorBtn : screen.innerText += valorBtn;
         //Si el contenido de la pantalla es 0 y presionamos queremos que se sobreescriba asi no queda el 0 adelante de todo
         //sino que se acumulen los numeros
     })
